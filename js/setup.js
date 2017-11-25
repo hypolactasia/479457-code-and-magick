@@ -16,11 +16,15 @@ var getRandomElement = function (array) {
   return array[Math.floor(Math.random() * array.length)];
 };
 
+var getRandomName = function () {
+  return Math.random >= 0.5 ? 'WIZARD_SURNAMES  WIZARD_NAMES' : 'WIZARD_NAMES WIZARD_SURNAMES';
+};
+
 var createWizards = function (wizards) {
   wizards = [];
   for (var i = 0; i < WIZARD_COUNT; i++) {
     wizards.push({
-      name: getRandomElement(WIZARD_NAMES) + ' ' + getRandomElement(WIZARD_SURNAMES),
+      name: getRandomName(WIZARD_NAMES) + ' ' + getRandomName(WIZARD_SURNAMES),
       coatColor: getRandomElement(WIZARD_COAT_COLORS),
       eyesColor: getRandomElement(WIZARD_EYES_COLOR)
     });
