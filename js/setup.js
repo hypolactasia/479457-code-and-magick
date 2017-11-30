@@ -15,16 +15,21 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template').c
 var getRandomElement = function (array) {
   return array[Math.floor(Math.random() * array.length)];
 };
-/*
-var getRandomName = function () {
-  return Math.random() * ((getRandomElement(WIZARD_SURNAMES) + '' + getRandomElement(WIZARD_NAMES)) + (getRandomElement(WIZARD_NAMES) + '' + getRandomElement(WIZARD_SURNAMES)));
+
+var getRandomName = function (names, surnames) {
+  var randomName = getRandomElement(names);
+  var randomSurname = getRandomElement(surnames);
+
+  return Math.random() > 0.5 ? randomName + ' ' + randomSurname : randomSurname + ' ' + randomName;
 };
-*/
+
+var wizardName = getRandomName(WIZARD_NAMES, WIZARD_SURNAMES);
+
 var createWizards = function () {
   var wizards = [];
   for (var i = 0; i < WIZARD_COUNT; i++) {
     wizards.push({
-      name: getRandomElement(WIZARD_NAMES) + ' ' + getRandomElement(WIZARD_SURNAMES),
+      name: wizardName  + ' ' + getRandomElement(WIZARD_SURNAMES),
       coatColor: getRandomElement(WIZARD_COAT_COLORS),
       eyesColor: getRandomElement(WIZARD_EYES_COLOR)
     });
