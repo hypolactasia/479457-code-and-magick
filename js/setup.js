@@ -29,7 +29,7 @@ var createWizards = function () {
   var wizards = [];
   for (var i = 0; i < WIZARD_COUNT; i++) {
     wizards.push({
-      name: wizardName  + ' ' + getRandomElement(WIZARD_SURNAMES),
+      name: wizardName + ' ' + getRandomElement(WIZARD_SURNAMES),
       coatColor: getRandomElement(WIZARD_COAT_COLORS),
       eyesColor: getRandomElement(WIZARD_EYES_COLOR)
     });
